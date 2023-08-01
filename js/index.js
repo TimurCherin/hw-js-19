@@ -15,5 +15,9 @@ const people = [
 { name: 'Mike', surname: "Watson", age: 42, occupation: 'engineer' },
 { name: 'Emily', surname: "Brad", age: 29, occupation: 'designer' }
 ];
-const myArray = people.map((obj) => {return {fullName: `${obj.name} ${obj.surname}`, id: obj.age}})
+// const myArray = people.map((obj) => {return {fullName: `${obj.name} ${obj.surname}`, id: obj.age}})
+const myArray = people.reduce((acc, el) => {
+    acc.push({fullName: el.name + " " + el.surname, id: el.age})
+    return acc
+}, [])
 console.log(myArray)
